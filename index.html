@@ -1,12 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>困了不</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        a {
+            color: white;
+            font-style: none;
+            text-decoration: none;
+        }
+
+        /* 头部 */
+        #header {
+            width: 100%;
+            height: 40px;
+            padding-top: 10px;
+            background-color: black;
+            color: white;
+        }
+
+        #header div ul:nth-child(1) li {
+            float: left;
+            list-style: none;
+            margin-left: 20px;
+        }
+
+        #header div ul:nth-child(2) li {
+            float: right;
+            list-style: none;
+            margin-right: 30px;
+        }
+
+        /* 内容 */
+        #content {
+            width: 100%;
+            background-color: aqua;
+        }
+
+        #logo {
+            width: 100%;
+            height: 200px;
+            background-color: red;
+        }
+
+        #hot {
+            width: 100%;
+            column-count: 4;
+            column-gap: 15px;
+        }
+
+        .item a img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .item a img:hover {
+            filter: gray;
+            /* filter为滤镜 gray为颜色 */
+            filter: grayscale(100);
+            /* 将图像转换为灰度图像 */
+            opacity: 0.7;
+            /* 透明度 */
+            transition: all 0.3s;
+            /* 上边那个加了之后 移入移出都会有过渡 */
+        }
+        .item p{
+            margin: 2px 8px;
+        }
+
+        /* 底部 */
+        #footer {
+            width: 100%;
+            height: 50px;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <!-- 网站头部 -->
+    <div id="header">
+        <div>
+            <ul>
+                <li><a href="#">主站</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">登录</a></li>
+                <li><a href="#">注册</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 首页内容 -->
+    <div id="content">
+        <!-- logo -->
+        <div id="logo"></div>
+        <!-- 热门  瀑布式-->
+        <div id="hot">
+            <div class="item">
+                <a href=""><img src="img/1.jpg" alt=""></a>
+                <p>说明内容,说明内容,说明内容,说明内容,说明内容</p>
+                <p>作者：XXXX</p>
+            </div>
+            <div class="item">
+                <a href=""><img src="img/2.jpg" alt=""></a>
+                <p>说明内容,说明内容,说明内容,说明内容,说明内容</p>
+                <p>作者：XXXX</p>
+            </div>
+            <div class="item">
+                <a href=""><img src="img/3.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="img/4.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="img/5.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="img/6.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="img/7.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="img/1.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="img/2.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="img/3.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="img/4.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="img/5.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="img/6.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="img/7.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="img/1.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="img/2.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="img/3.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="img/4.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="img/5.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="img/6.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="img/7.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="img/1.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="img/2.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="img/3.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="img/4.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="img/5.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="img/6.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href=""><img src="img/7.jpg" alt=""></a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- 网站底部 -->
+    <div id="footer">
+        <p>版权所有 &copy; 2023 困了不 </p>
+        <p>上海羊倦科技有限公司 </p>
+    </div>
 </body>
+
 </html>
