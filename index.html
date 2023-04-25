@@ -117,14 +117,14 @@
         function getdata() {
             $.post("api/index.php", function (data, status) {
                 if(status){
-                    return data;
+                    impdata(data);
                 }else{
-                    return false;
+                    alert('获取数据失败');
                 }
             })
         }
         // 测试数据
-        var data = '[{ "name":"test", "url":"img/5.jpg", "site":"https://baidu.com", "author":"倦意" },{ "name":"test", "url":"img/1.jpg", "site":"https://baidu.com", "author":"倦意" }]';
+        // var data = '[{ "name":"test", "url":"img/5.jpg", "site":"https://baidu.com", "author":"倦意" },{ "name":"test", "url":"img/1.jpg", "site":"https://baidu.com", "author":"倦意" }]';
 
         // 导入数据
         function impdata(data) {
@@ -139,7 +139,8 @@
             }
             $("#hot").html(output);
         }
-        impdata(data)
+        
+        getdata();
     </script>
 </body>
 
