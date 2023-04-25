@@ -51,8 +51,8 @@ a {
     background-position: top;
     background-repeat: no-repeat;
     overflow: hidden;
-    border-bottom-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 /* 瀑布流 */
@@ -71,6 +71,7 @@ a {
 
 .item a img {
     width: 100%;
+    border-radius: 15px;
 }
 
 .item a img:hover {

@@ -110,6 +110,37 @@
         <p>版权所有 &copy; 2023 困了不 | 备案号：XXXXX</p>
         <p>上海羊倦科技有限公司 </p>
     </div>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // 获取数据
+        function getdata() {
+            $.post("api/index.php", function (data, status) {
+                if(status){
+                    return data;
+                }else{
+                    return false;
+                }
+            })
+        }
+        // 测试数据
+        var data = '[{ "name":"test", "url":"img/5.jpg", "site":"https://baidu.com", "author":"倦意" },{ "name":"test", "url":"img/1.jpg", "site":"https://baidu.com", "author":"倦意" }]';
+
+        // 导入数据
+        function impdata(data) {
+            var obj = JSON.parse(data);
+            var output = "";
+            for (var i = 0; i < obj.length; i++) {
+                output += `<div class="item">
+                <a href="` + obj[i]["site"] + `"><img src="` + obj[i]["url"] + `" alt=""></a>
+                <p> ` + obj[i]["name"] + `</p>
+                <p>作者：` + obj[i]["author"] + `</p>
+                </div>`
+            }
+            $("#hot").html(output);
+        }
+        impdata(data)
+    </script>
 </body>
 
 </html>
