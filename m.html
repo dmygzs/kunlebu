@@ -7,17 +7,48 @@
     <title>Document</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
     <link rel="stylesheet" href="./css/m.css">
+    <!-- <script src="./js/m.js" type="text/javascript"></script> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+
+
 </head>
 <body>
-    <nav>
-        <li>返回</li>
-    </nav>
-    <div class="index__brief__src-audio-cover-">
-        <div class="index__litpic__src-audio-cover-"><img src="//i0.hdslb.com/bfs/music/6b719f289d90af117fd17020553fa2eb9b8061db.jpg@400w_400h.webp" alt=""></div>
-        <div class="index__operateBlock__src-audio-cover-">
-            <div class="index__background__src-audio-cover-"></div>
-            <img src="./img/cs001.png" alt="">
-            <div class="index__button__src-audio-cover-"><img src="./img/audio_play.png" alt=""></div>
-            <audio preload="auto" src="https://upos-sz-mirrorcos.bilivideo.com/ugaxcode/m200828a221q7uwbgdycqg17ovbc1wt3-192k.m4a?e=ig8euxZM2rNcNbdlhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&amp;uipk=5&amp;nbs=1&amp;deadline=1682330050&amp;gen=playurlv2&amp;os=cosbv&amp;oi=2887183783&amp;trid=f27b1c3cd988454cb3186757f4d48328B&amp;mid=0&amp;platform=html5&amp;upsig=f664e4aa483f3f59e9d656fc7c12c1fa&amp;uparams=e,uipk,nbs,deadline,gen,os,oi,trid,mid,platform&amp;bvc=vod&amp;nettype=0&amp;orderid=0,1&amp;logo=00000000" controls=""></audio></div></div>
+    <!-- 图片 -->
+    <div class="cover">
+        <img src="./img/6b719f289d90af117fd17020553fa2eb9b8061db.jpg@400w_400h.webp" alt="">
+    </div>
+<!-- 介绍    -->
+    <div class="info">
+        <div class="title">羊倦科技</div>
+        <div class="singer">作者</div>
+    </div>
+    <!-- 音乐大小控制    -->
+    <div class="volume-box">
+        <span class="volume-down"><i class="material-icons">remove</i></span>
+        <input type="range" class="volume-range" step="1" value="80" min="0" max="100"
+            oninput="music.volume = this.value/100">
+        <span class="volume-up"><i class="material-icons">add</i></span>
+    </div>
+    <!-- 音乐大小控件 -->
+    <div class="btn-box">
+       
+        <i class="material-icons volume" onclick="handleVolume()">volume_up</i>
+    </div>
+    <!-- 音乐 -->
+    <div class="music-box">
+        <input type="range" class="seekbar" step="1" value="0" min="0" max="100" oninput="handleSeekBar()">
+        <audio class="music-element">
+            <source src="./img/1_暖暖 - 无限少女_(Instrumental).wav">
+        </audio>
+        <!-- 加载播放时间 -->
+        <span class="current-time">0:0</span><span class="duration">0:0</span>
+        <span class="play" onclick="handlePlay()">
+            <i class="material-icons">play_arrow</i>
+        </span>
+    </div>
+
+    <script src="js/m.js" type="text/javascript"></script>
 </body>
 </html>
