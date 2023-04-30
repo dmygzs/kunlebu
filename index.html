@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>困了不</title>
+
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/m.css">
 </head>
 
 <body>
@@ -33,77 +35,78 @@
         <!-- 热门  瀑布式-->
         <div id="hot">
             <div class="item">
-                <a href=""><img src="img/1.jpg" alt=""></a>
+                <a href="javascript:void(0)"><img src="img/1.jpg" alt=""></a>
                 <p>说明内容,说明内容,说明内容,说明内容,说明内容</p>
                 <p>作者：XXXX</p>
             </div>
             <div class="item">
-                <a href=""><img src="img/2.jpg" alt=""></a>
+                <a href="javascript:void(0)"><img src="img/2.jpg" alt=""></a>
                 <p>说明内容,说明内容,说明内容,说明内容,说明内容</p>
                 <p>作者：XXXX</p>
             </div>
             <div class="item">
-                <a href=""><img src="img/3.jpg" alt=""></a>
+                <a href="javascript:void(0)"><img src="img/3.jpg" alt=""></a>
             </div>
             <div class="item">
-                <a href=""><img src="img/4.jpg" alt=""></a>
+                <a href="javascript:void(0)"><img src="img/4.jpg" alt=""></a>
             </div>
             <div class="item">
-                <a href=""><img src="img/5.jpg" alt=""></a>
+                <a href="javascript:void(0)"><img src="img/5.jpg" alt=""></a>
             </div>
             <div class="item">
-                <a href=""><img src="img/6.jpg" alt=""></a>
+                <a href="javascript:void(0)"><img src="img/6.jpg" alt=""></a>
             </div>
             <div class="item">
-                <a href=""><img src="img/7.jpg" alt=""></a>
+                <a href="javascript:void(0)"><img src="img/7.jpg" alt=""></a>
             </div>
             <div class="item">
-                <a href=""><img src="img/3.jpg" alt=""></a>
+                <a href="javascript:void(0)"><img src="img/3.jpg" alt=""></a>
             </div>
             <div class="item">
-                <a href=""><img src="img/4.jpg" alt=""></a>
+                <a href="javascript:void(0)"><img src="img/4.jpg" alt=""></a>
             </div>
             <div class="item">
-                <a href=""><img src="img/5.jpg" alt=""></a>
+                <a href="javascript:void(0)"><img src="img/5.jpg" alt=""></a>
             </div>
             <div class="item">
-                <a href=""><img src="img/6.jpg" alt=""></a>
+                <a href="javascript:void(0)"><img src="img/6.jpg" alt=""></a>
             </div>
             <div class="item">
-                <a href=""><img src="img/7.jpg" alt=""></a>
+                <a href="javascript:void(0)"><img src="img/7.jpg" alt=""></a>
             </div>
             <div class="item">
-                <a href=""><img src="img/3.jpg" alt=""></a>
+                <a href="javascript:void(0)"><img src="img/3.jpg" alt=""></a>
             </div>
             <div class="item">
-                <a href=""><img src="img/4.jpg" alt=""></a>
+                <a href="javascript:void(0)"><img src="img/4.jpg" alt=""></a>
             </div>
             <div class="item">
-                <a href=""><img src="img/5.jpg" alt=""></a>
+                <a href="javascript:void(0)"><img src="img/5.jpg" alt=""></a>
             </div>
             <div class="item">
-                <a href=""><img src="img/6.jpg" alt=""></a>
+                <a href="javascript:void(0)"><img src="img/6.jpg" alt=""></a>
             </div>
             <div class="item">
-                <a href=""><img src="img/7.jpg" alt=""></a>
+                <a href="javascript:void(0)"><img src="img/7.jpg" alt=""></a>
             </div>
             <div class="item">
-                <a href=""><img src="img/3.jpg" alt=""></a>
+                <a href="javascript:void(0)"><img src="img/3.jpg" alt=""></a>
             </div>
             <div class="item">
-                <a href=""><img src="img/4.jpg" alt=""></a>
+                <a href="javascript:void(0)"><img src="img/4.jpg" alt=""></a>
             </div>
             <div class="item">
-                <a href=""><img src="img/5.jpg" alt=""></a>
+                <a href="javascript:void(0)"><img src="img/5.jpg" alt=""></a>
             </div>
             <div class="item">
-                <a href=""><img src="img/6.jpg" alt=""></a>
+                <a href="javascript:void(0)"><img src="img/6.jpg" alt=""></a>
             </div>
             <div class="item">
-                <a href=""><img src="img/7.jpg" alt=""></a>
+                <a href="javascript:void(0)"><img src="img/7.jpg" alt=""></a>
             </div>
         </div>
-    </div>
+        <!-- 动态加载 -->
+        <div id="gohtml"></div>
     </div>
     <!-- 网站底部 -->
     <div id="footer">
@@ -111,14 +114,16 @@
         <p>上海羊倦科技有限公司 </p>
     </div>
     <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/jquery.pjax.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/m.js"></script>
     <script>
         // 获取数据
         function getdata() {
             $.post("api/index.php", function (data, status) {
-                if(status){
+                if (status) {
                     impdata(data);
-                }else{
+                } else {
                     alert('获取数据失败');
                 }
             })
@@ -139,8 +144,38 @@
             }
             $("#hot").html(output);
         }
-        
+
         getdata();
+
+        var gohtmlstate = false;
+
+        function gohtml() {
+            if (!gohtmlstate) {
+                // 启动pjax
+                $("#logo").hide();
+                $("#hot").hide();
+                $("#gohtml").show();
+
+                $.pjax({
+                    url: "m.html",   //请求的页面地址
+                    container: "#gohtml",//使用什么容器装载html
+                    push: false,   //是否模拟a链接跳转造成的url改变
+                    fragment: "body",//css选择器，被选中dom的内容会被抽取出来
+                })
+                gohtmlstate = true;
+
+            }else{
+                // 关闭pjax
+                $("#gohtml").html = "";
+                gohtmlstate = false;
+                $("#logo").show();
+                $("#hot").show();
+            }
+        }
+
+        $("#content").on('click', 'a[target!=_blank]', function () {
+            gohtml()
+        });
     </script>
 </body>
 

@@ -47,12 +47,18 @@ a {
 #logo {
     width: 100%;
     height: 166px;
-    background-image: url(https://static.maoercdn.com/assets/www/images/build/soundback.86e25ebd.png);
+    background-image: url(../img/banner.png);
     background-position: top;
     background-repeat: no-repeat;
     overflow: hidden;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
+}
+
+#gohtml{
+    width: 100%;
+    height: 100%;
+    display: none;
 }
 
 /* 瀑布流 */
