@@ -1,20 +1,167 @@
 #m_body {
-    height: 100%;
-    display: flex;
+    height: 85%;
+    width: 90%;
+    margin: 5%;
+    border-radius: 15px;
+    padding-top: 1px;
+
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    overflow: hidden;
+    overflow: hidden; */
     background-color: white;
+}
+
+/* 内容 */
+#m_main{
+    width: 285px;
+    height: auto;
+    margin: 50px 40%;
+}
+
+@media screen and (max-width: 600px) {
+    #m_main{
+        margin: 50px 8%;
+    }
 }
 @font-face {
     font-family: 'Material Icons';
     font-style: normal;
     font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+    src: url(fonts/m.woff2) format('woff2');
   }
+
   
-  .material-icons {
+/* 图片 */
+.cover {
+    overflow: hidden;
+    /* position: absolute; */
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 30px #7d70ecb7;
+}
+
+.cover img {
+    width: 100%;
+    
+}
+
+
+.shell input[type=range]::-ms-thumb {
+    -webkit-appearance: none !important;
+    background: #ff3677;
+    height: 8px;
+    width: 8px;
+    border-radius: 100%;
+}
+/* 介绍开始 */
+.info {
+    /* position: absolute; */
+    margin-top: 20px;
+    text-align: center;
+}
+
+.info .title {
+    font-size: 35px;
+    color: rgb(40, 45, 100);
+}
+
+.info .singer {
+    font-size: 20px;
+    color: #6e7cf5;
+}
+/* 介绍结束 */
+
+
+/* 音乐 */
+.music-box {
+    /* position: absolute;
+    top: 445px; */
+}
+
+.music-box input[type=range] {
+    height: 5px;
+    width: 230px;
+    margin: 0 0 10px 0;
+}
+
+.music-box input[type=range]::-webkit-slider-thumb {
+    height: 5px;
+    width: 7px;
+}
+/* 加载播放时间 */
+.music-box .current-time {
+    /* position: absolute;
+    left: -35px;
+    top: 50%; */
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #252525;
+}
+
+.music-box .duration {
+    /* position: absolute;
+    right: -35px;
+    top: 50%; */
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: rgb(40, 45, 100);
+}
+
+.music-box .play,
+.music-box .pause {
+    /* position: absolute;
+    left: 50%;
+    top: 55px; */
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: rgb(160, 200, 250);
+    cursor: pointer;
+    transition: all 0.4s;
+    /* margin-top: -20px; */
+}
+
+.music-box .play i,
+.music-box .pause i {
+    font-size: 36px;
+    color: rgb(40, 45, 100);
+    /* position: absolute; */
+    /* left: 50%;
+    top: 50%; */
+    transform: translate(-48%, -50%);
+}
+
+.music-box .pause i {
+    font-size: 32px;
+    transform: translate(-50%, -50%);
+}
+/* 音乐大小控件开始 */
+.btn-box {
+    /* position: absolute;
+    top: 400px; */
+    width: 100%;
+    height: 27px;
+    margin-top: -40px;
+    /* display: flex;
+    justify-content: center; */
+}
+
+.btn-box i {
+    float: right;
+    font-size: 24px;
+    color: rgb(40, 45, 100);
+    margin-right:10px;
+    cursor: pointer;
+}
+
+.btn-box i.active {
+    color: #ff3677;
+}
+
+/* 播放按钮 */
+.material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
@@ -29,72 +176,11 @@
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
   }
-  
-/* 图片 */
-.cover {
-    width: 280px;
-    height: 270px;
-    overflow: hidden;
-    position: absolute;
-    top: 20px;
-    border-radius: 5px;
-    box-shadow: 0 5px 30px #7d70ecb7;
-}
-
-.cover img {
-    width: 100%;
-}
-
-
-.shell input[type=range]::-ms-thumb {
-    -webkit-appearance: none !important;
-    background: #ff3677;
-    height: 8px;
-    width: 8px;
-    border-radius: 100%;
-}
-/* 介绍开始 */
-.info {
-    position: absolute;
-    top: 305px;
-    text-align: center;
-}
-
-.info .title {
-    font-size: 35px;
-    color: rgb(40, 45, 100);
-}
-
-.info .singer {
-    font-size: 20px;
-    color: #6e7cf5;
-}
-/* 介绍结束 */
-/* 音乐大小控件开始 */
-.btn-box {
-    position: absolute;
-    top: 400px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.btn-box i {
-    font-size: 24px;
-    color: rgb(40, 45, 100);
-    margin: 0 30px;
-    cursor: pointer;
-}
-
-.btn-box i.active {
-    color: #ff3677;
-}
-/* 音乐大小控件结束 */
 /* 音乐大小控制开始 */
 .volume-box {
     display: none;
-    position: absolute;
-    top: 370px;
+    /* position: absolute; */
+    /* top: 370px; */
     z-index: 1;
     padding: 0 20px;
 }
@@ -129,72 +215,8 @@
     display: block;
 }
 /* 音乐大小控制结束 */
-
-/* 音乐 */
-.music-box {
-    position: absolute;
-    top: 445px;
-}
-
-.music-box input[type=range] {
-    height: 5px;
-    width: 230px;
-    margin: 0 0 10px 0;
-}
-
-.music-box input[type=range]::-webkit-slider-thumb {
-    height: 5px;
-    width: 7px;
-}
-/* 加载播放时间 */
-.music-box .current-time {
-    position: absolute;
-    left: -35px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 12px;
-    color: #252525;
-}
-
-.music-box .duration {
-    position: absolute;
-    right: -35px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 12px;
-    color: rgb(40, 45, 100);
-}
-
-.music-box .play,
-.music-box .pause {
-    position: absolute;
-    left: 50%;
-    top: 55px;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 50px;
-    border-radius: 50px;
-    background-color: rgb(160, 200, 250);
-    cursor: pointer;
-    transition: all 0.4s;
-}
-
-.music-box .play i,
-.music-box .pause i {
-    font-size: 36px;
-    color: rgb(40, 45, 100);
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-48%, -50%);
-}
-
-.music-box .pause i {
-    font-size: 32px;
-    transform: translate(-50%, -50%);
-}
 video{
-    position: absolute;
-    width: 100%;
+    /* position: absolute;
+    width: 100%; */
 }
 /* 音乐 */

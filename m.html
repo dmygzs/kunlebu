@@ -1,37 +1,36 @@
 <body>
     <div id="m_body">
-        <!-- 图片 -->
-        <div class="cover">
-            <img src="./img/6b719f289d90af117fd17020553fa2eb9b8061db.jpg@400w_400h.webp" alt="">
-        </div>
-        <!-- 介绍    -->
-        <div class="info">
-            <div class="title">羊倦科技</div>
-            <div class="singer">作者</div>
-        </div>
-        <!-- 音乐大小控制    -->
-        <div class="volume-box">
-            <span class="volume-down"><i class="material-icons">remove</i></span>
-            <input type="range" class="volume-range" step="1" value="80" min="0" max="100"
-                oninput="music.volume = this.value/100">
-            <span class="volume-up"><i class="material-icons">add</i></span>
-        </div>
-        <!-- 音乐大小控件 -->
-        <div class="btn-box">
-
-            <i class="material-icons volume" onclick="handleVolume()">volume_up</i>
-        </div>
-        <!-- 音乐 -->
-        <div class="music-box">
-            <input type="range" class="seekbar" step="1" value="0" min="0" max="100" oninput="handleSeekBar()">
-            <audio class="music-element">
-                <source src="./img/1_暖暖 - 无限少女_(Instrumental).wav">
-            </audio>
-            <!-- 加载播放时间 -->
-            <span class="current-time">0:0</span><span class="duration">0:0</span>
-            <span class="play" onclick="handlePlay()">
-                <i class="material-icons">play_arrow</i>
-            </span>
+        <div id="m_main">
+            <!-- 图片 -->
+            <div class="cover">
+                <img src="./img/6b719f289d90af117fd17020553fa2eb9b8061db.jpg@400w_400h.webp" alt="">
+            </div>
+            <!-- 介绍    -->
+            <div class="info">
+                <div class="title">羊倦科技</div>
+                <div class="singer">作者</div>
+            </div>
+            <!-- 音乐大小控制    -->
+            <div class="volume-box">
+                <span class="volume-down"><i class="material-icons">remove</i></span>
+                <input type="range" class="volume-range" step="1" value="80" min="0" max="100"
+                    oninput="music.volume = this.value/100">
+                <span class="volume-up"><i class="material-icons">add</i></span>
+            </div>
+            <!-- 音乐 -->
+            <div class="music-box">
+                <input type="range" class="seekbar" step="1" value="0" min="0" max="100" oninput="handleSeekBar()">
+                <audio class="music-element">
+                    <source src="./img/1_暖暖 - 无限少女_(Instrumental).wav">
+                </audio>
+                <!-- 音乐大小控件 -->
+                <div class="btn-box">
+                    <!-- 加载播放时间 -->
+                    <span class="current-time">0:0</span><span class="duration">0:0</span>
+                    <i class="material-icons" onclick="handlePlay()">play_arrow</i>
+                    <i class="material-icons volume" onclick="handleVolume()">volume_up</i>
+                </div>
+            </div>
         </div>
     </div>
 </body>

@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/m.css">
+    
 </head>
 
 <body>
@@ -105,9 +106,10 @@
                 <a href="javascript:void(0)"><img src="img/7.jpg" alt=""></a>
             </div>
         </div>
-        <!-- 动态加载 -->
-        <div id="gohtml"></div>
     </div>
+    <!-- 动态加载 -->
+    <div id="windows"></div>
+
     <!-- 网站底部 -->
     <div id="footer">
         <p>版权所有 &copy; 2023 困了不 | 备案号：XXXXX</p>
@@ -147,34 +149,34 @@
 
         getdata();
 
-        var gohtmlstate = false;
+        var windowsstate = false;
 
-        function gohtml() {
-            if (!gohtmlstate) {
+        function openwindows() {
+            if (!windowsstate) {
                 // 启动pjax
-                $("#logo").hide();
-                $("#hot").hide();
-                $("#gohtml").show();
+                // $("#logo").hide();
+                // $("#hot").hide();
+                $("#windows").show();
 
                 $.pjax({
                     url: "m.html",   //请求的页面地址
-                    container: "#gohtml",//使用什么容器装载html
+                    container: "#windows",//使用什么容器装载html
                     push: false,   //是否模拟a链接跳转造成的url改变
                     fragment: "body",//css选择器，被选中dom的内容会被抽取出来
                 })
-                gohtmlstate = true;
+                windowsstate = true;
 
             }else{
                 // 关闭pjax
-                $("#gohtml").html = "";
-                gohtmlstate = false;
-                $("#logo").show();
-                $("#hot").show();
+                $("#windows").html = "";
+                windowsstate = false;
+                // $("#logo").show();
+                // $("#hot").show();
             }
         }
 
         $("#content").on('click', 'a[target!=_blank]', function () {
-            gohtml()
+            openwindows()
         });
     </script>
 </body>
